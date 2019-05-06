@@ -43,6 +43,10 @@ Copyright (C) 1987, FUJITSU LTD. (I.Ichikawa).
 Copyright (C) 1996-2018, The nkf Project.
 ```
 
+### Advance Usage
+
+- https://github.com/KEINOS/Dockerfile_of_Tooting-Mastodon @ GitHub
+
 ## Build your own
 
 If you don't want to pull the built image but build it your own, then just get the Dockerfile and build it.
