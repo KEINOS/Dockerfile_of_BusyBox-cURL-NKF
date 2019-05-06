@@ -1,4 +1,4 @@
-[![](https://img.shields.io/docker/cloud/automated/keinos/busybox-curl-nkf.svg)](https://hub.docker.com/r/keinos/busybox-curl-nkf/builds "Docker Hub Build Status") [![](https://img.shields.io/docker/cloud/build/keinos/busybox-curl-nkf.svg)](https://hub.docker.com/r/keinos/busybox-curl-nkf/builds "Docker Hub Build Status")
+[![](https://images.microbadger.com/badges/image/keinos/busybox-curl-nkf.svg)](https://microbadger.com/images/keinos/busybox-curl-nkf "Image info on microbadger.com") [![](https://img.shields.io/docker/cloud/automated/keinos/busybox-curl-nkf.svg)](https://hub.docker.com/r/keinos/busybox-curl-nkf/builds "Docker Hub Build Status") [![](https://img.shields.io/docker/cloud/build/keinos/busybox-curl-nkf.svg)](https://hub.docker.com/r/keinos/busybox-curl-nkf/builds "Docker Hub Build Status")
 
 # Dockerfile of BusyBox-cURL-NKF
 
@@ -20,6 +20,11 @@ Useful if you want to URL-encode a string and curl (POST) it to RESTful Web APIs
 $ # Pull the docker image
 $ docker pull keinos/busybox-curl-nkf
 ...
+$ # Check version of NKF in the container
+$ docker run --rm busybox-curl-nkf nkf --version
+Network Kanji Filter Version 2.1.5 (2018-12-15)
+Copyright (C) 1987, FUJITSU LTD. (I.Ichikawa).
+Copyright (C) 1996-2018, The nkf Project.
 ```
 
 ### Basic Usage
@@ -47,6 +52,15 @@ If you don't want to pull the built image but build it your own, then just get t
   - View: https://github.com/KEINOS/Dockerfile_of_BusyBox-cURL-NKF/blob/master/Dockerfile
   - Clone: https://github.com/KEINOS/Dockerfile_of_BusyBox-cURL-NKF.git
 
+### Easiest Build
+
+```shellsession
+$ docker build --tag busybox-curl-nkf https://github.com/KEINOS/Dockerfile_of_BusyBox-cURL-NKF.git
+...
+```
+
+### Usual Build
+
 ```shellsession
 $ # Create and move to work directory
 $ mkdir my_busybox_curl_nkf && cd $_
@@ -65,9 +79,26 @@ Copyright (C) 1987, FUJITSU LTD. (I.Ichikawa).
 Copyright (C) 1996-2018, The nkf Project.
 ```
 
+### TextBook Build
+
+```shellsession
+$ # Change working directory
+$ cd ~/
+$ # Clone and move to the source repository
+$ git clone https://github.com/KEINOS/Dockerfile_of_BusyBox-cURL-NKF.git my_busybox_curl_nkf && cd $_
+$ # Build
+$ docker build --tag busybox-curl-nkf .
+...
+$ # Check version of NKF
+$ docker run --rm busybox-curl-nkf nkf --version
+Network Kanji Filter Version 2.1.5 (2018-12-15)
+Copyright (C) 1987, FUJITSU LTD. (I.Ichikawa).
+Copyright (C) 1996-2018, The nkf Project.
+```
+
 ## Tested env
 
-```shelsession
+```shellsession
 $ # Host OS info (macOS)
 $ sw_vers
 ProductName:    Mac OS X
